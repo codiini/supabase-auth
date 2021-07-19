@@ -1,7 +1,7 @@
  <template>
   <div>
-    <h1>SignUp Page</h1>
-    <form @submit.prevent="signUp">
+    <h1>Sign In</h1>
+    <form @submit.prevent="signIn">
       <input
         class="inputField"
         type="email"
@@ -14,15 +14,18 @@
         placeholder="Your Password"
         v-model="form.password"
       />
-      <button type="submit">Sign Up</button>
+      <button type="submit">login</button>
     </form>
-    <p>Already have an account? <router-link to="/sign-in">Sign In</router-link></p>
+    <p>
+      Don't have an account? <router-link to="/sign-up">Sign Up</router-link>
+    </p>
   </div>
 </template>
 
 <script>
 import { reactive } from "vue";
 import { useStore } from "vuex";
+
 export default {
   setup() {
     const form = reactive({
@@ -31,17 +34,15 @@ export default {
     });
     const store = useStore();
 
-    const signUp = () => {
-      store.dispatch("signUpAction", form);
+    const signIn = () => {
+      store.dispatch("signInAction", form);
     };
-
     return {
       form,
-      signUp,
+      signIn,
     };
   },
 };
 </script>
-
 <style>
 </style>
