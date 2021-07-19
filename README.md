@@ -2,6 +2,10 @@
 
 ## Project setup
 ```
+First create your own project on supabase and get your url and public key. Then rename the .env.example file to .env.local and replace the values there accordingly.
+```
+
+```
 yarn install
 ```
 
